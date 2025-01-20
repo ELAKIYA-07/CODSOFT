@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    // Generate a random number between 1 and 100
+    int randomNumber = rand() % 100 + 1;
+    int userGuess = 0;
+    int attempts = 0;
+    
+    cout<<"          WELCOME TO NUMBER GUESSING GAME      "<<endl;
+    cout<<endl;
+    cout << "Guess the random number (between 1 and 100): "<<endl;
+
+    while (userGuess != randomNumber) {
+        cin >> userGuess;
+        attempts++;
+
+        if (userGuess < randomNumber) {
+            cout << "Guessed number is too low! Try again "<<endl;
+        } else if (userGuess > randomNumber) {
+            cout << "Guessed number is too high! Try again "<<endl;
+        } else {
+            cout << "Congratulations! You guessed the correct number in just " << attempts << " attempts!" << endl;
+        }
+    }
+return 0;
+}
